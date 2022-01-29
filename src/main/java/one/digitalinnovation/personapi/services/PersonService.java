@@ -36,11 +36,6 @@ public class PersonService {
         return personMapper.toDTO(person);
     }
 
-    private Person verifyIfExists(Long id) throws PersonNotFoundException {
-        return personRepository.findById(id)
-                .orElseThrow(() -> new PersonNotFoundException(id));
-    }
-
     public List<PersonDTO> listAll() {
         List<Person> people = personRepository.findAll();
         return people.stream()
@@ -62,6 +57,11 @@ public class PersonService {
     public void delete(Long id) throws PersonNotFoundException {
         verifyIfExists(id);
         personRepository.deleteById(id);
+    }
+
+    private Person verifyIfExists(Long id) throws PersonNotFoundException {
+        return personRepository.findById(id)
+                .orElseThrow(() -> new PersonNotFoundException(id));
     }
 
     private MessageResponseDTO createMessageResponse(String s, Long id2) {
