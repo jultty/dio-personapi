@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class LinkNotFoundException extends Exception {
 
     public LinkNotFoundException(Long id) {
-        super(String.format("Person with ID %s not found!", id));
+        super(String.format("Link with ID %s not found!", id));
     }
 }
