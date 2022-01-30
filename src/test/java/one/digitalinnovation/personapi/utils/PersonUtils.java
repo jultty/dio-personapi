@@ -22,7 +22,7 @@ public class PersonUtils {
                 .url(URL)
                 .date("2022-01-23")
                 .language("English")
-                .phones(Collections.singletonList(PhoneUtils.createFakeDTO()))
+                .quotes(Collections.singletonList(QuoteUtils.createFakeDTO()))
                 .build();
     }
 
@@ -34,7 +34,7 @@ public class PersonUtils {
                 .url(URL)
                 .date(DATE)
                 .language(LANGUAGE)
-                .phones(Collections.singletonList(PhoneUtils.createFakeEntity()))
+                .quotes(Collections.singletonList(QuoteUtils.createFakeEntity()))
                 .build();
     }
 

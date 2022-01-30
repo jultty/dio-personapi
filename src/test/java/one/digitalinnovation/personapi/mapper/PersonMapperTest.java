@@ -2,9 +2,9 @@ package one.digitalinnovation.personapi.mapper;
 
 import one.digitalinnovation.personapi.dto.mapper.PersonMapper;
 import one.digitalinnovation.personapi.dto.request.PersonDTO;
-import one.digitalinnovation.personapi.dto.request.PhoneDTO;
+import one.digitalinnovation.personapi.dto.request.QuoteDTO;
 import one.digitalinnovation.personapi.entities.Person;
-import one.digitalinnovation.personapi.entities.Phone;
+import one.digitalinnovation.personapi.entities.Quote;
 import one.digitalinnovation.personapi.utils.PersonUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,11 +28,11 @@ public class PersonMapperTest {
         assertEquals(personDTO.getUrl(), person.getUrl());
         assertEquals(personDTO.getLanguage(), person.getLanguage());
 
-        Phone phone = person.getPhones().get(0);
-        PhoneDTO phoneDTO = personDTO.getPhones().get(0);
+        Quote quote = person.getQuotes().get(0);
+        QuoteDTO quoteDTO = personDTO.getQuotes().get(0);
 
-        assertEquals(phoneDTO.getType(), phone.getType());
-        assertEquals(phoneDTO.getNumber(), phone.getNumber());
+        assertEquals(quoteDTO.getType(), quote.getType());
+        assertEquals(quoteDTO.getQuote(), quote.getQuote());
     }
 
     @Test
@@ -45,10 +45,10 @@ public class PersonMapperTest {
         assertEquals(person.getUrl(), personDTO.getUrl());
         assertEquals(person.getLanguage(), personDTO.getLanguage());
 
-        Phone phone = person.getPhones().get(0);
-        PhoneDTO phoneDTO = personDTO.getPhones().get(0);
+        Quote quote = person.getQuotes().get(0);
+        QuoteDTO quoteDTO = personDTO.getQuotes().get(0);
 
-        assertEquals(phone.getType(), phoneDTO.getType());
-        assertEquals(phone.getNumber(), phoneDTO.getNumber());
+        assertEquals(quote.getType(), quoteDTO.getType());
+        assertEquals(quote.getQuote(), quoteDTO.getQuote());
     }
 }

@@ -46,7 +46,7 @@ public class Person {
     private String language;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
-    private List<Phone> phones = new ArrayList<>();
+    private List<Quote> quotes = new ArrayList<>();
 
 
 }

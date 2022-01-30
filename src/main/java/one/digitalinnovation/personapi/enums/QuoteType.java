@@ -5,11 +5,11 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum PhoneType {
+public enum QuoteType {
 
-    HOME("Home"),
-    MOBILE("Mobile"),
-    COMMERCIAL("Commercial");
+    LINE("Line"),
+    BLOCK("Block"),
+    PARAGRAPH("Paragraph");
 
     private final String description;
 }
