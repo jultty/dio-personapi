@@ -38,4 +38,7 @@ public class PersonDTO {
     @Valid
     @NotEmpty
     private List<PhoneDTO> phones;
+
+    @NotNull
+    private String city;
 }
