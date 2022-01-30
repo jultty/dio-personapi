@@ -41,6 +41,5 @@ public class PersonDTO {
     private String language;
 
     @Valid
-    @NotEmpty
     private List<QuoteDTO> quotes;
 }

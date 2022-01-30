@@ -21,6 +21,5 @@ public class QuoteDTO {
     @Enumerated(EnumType.STRING)
     private QuoteType type;
 
-    @NotEmpty
     private String quote;
 }

@@ -26,9 +26,9 @@ public class Quote {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column()
     private QuoteType type;
 
-    @Column(nullable = false, unique = true)
+    @Column(unique = true)
     private String quote;
 }
