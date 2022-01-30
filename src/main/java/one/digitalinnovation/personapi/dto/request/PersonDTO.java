@@ -21,6 +21,10 @@ public class PersonDTO {
     private Long id;
 
     @NotEmpty
+    @Size(min = 1)
+    private String title;
+
+    @NotEmpty
     @Size(min = 1, max = 100)
     private String author;
 
@@ -34,7 +38,7 @@ public class PersonDTO {
     @NotNull
     private String date;
 
-    @NotNull
+    @NotEmpty
     private String language;
 
     @Valid
