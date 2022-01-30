@@ -23,9 +23,10 @@ public class PersonMapperTest {
         PersonDTO personDTO = PersonUtils.createFakeDTO();
         Person person = personMapper.toModel(personDTO);
 
-        assertEquals(personDTO.getFirstName(), person.getFirstName());
-        assertEquals(personDTO.getLastName(), person.getLastName());
-        assertEquals(personDTO.getCpf(), person.getCpf());
+        assertEquals(personDTO.getAuthor(), person.getAuthor());
+        assertEquals(personDTO.getSource(), person.getSource());
+        assertEquals(personDTO.getUrl(), person.getUrl());
+        assertEquals(personDTO.getLanguage(), person.getLanguage());
 
         Phone phone = person.getPhones().get(0);
         PhoneDTO phoneDTO = personDTO.getPhones().get(0);
@@ -39,9 +40,10 @@ public class PersonMapperTest {
         Person person = PersonUtils.createFakeEntity();
         PersonDTO personDTO = personMapper.toDTO(person);
 
-        assertEquals(person.getFirstName(), personDTO.getFirstName());
-        assertEquals(person.getLastName(), personDTO.getLastName());
-        assertEquals(person.getCpf(), personDTO.getCpf());
+        assertEquals(person.getAuthor(), personDTO.getAuthor());
+        assertEquals(person.getSource(), personDTO.getSource());
+        assertEquals(person.getUrl(), personDTO.getUrl());
+        assertEquals(person.getLanguage(), personDTO.getLanguage());
 
         Phone phone = person.getPhones().get(0);
         PhoneDTO phoneDTO = personDTO.getPhones().get(0);

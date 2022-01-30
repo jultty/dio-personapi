@@ -8,29 +8,32 @@ import java.util.Collections;
 
 public class PersonUtils {
 
-    private static final String FIRST_NAME = "Rodrigo";
-    private static final String LAST_NAME = "Peleias";
-    private static final String CPF_NUMBER = "369.333.878-79";
-    private static final long PERSON_ID = 1L;
-    public static final LocalDate BIRTH_DATE = LocalDate.of(2010, 10, 1);
+    private static final String AUTHOR = "Alejandro Ugarte";
+    private static final String SOURCE = "Baeldung";
+    private static final String URL = "https://www.baeldung.com/java-bean-validation-not-null-empty-blank";
+    private static final long ID = 1L;
+    public static final LocalDate DATE = LocalDate.of(2022, 1, 23);
+    private static final String LANGUAGE = "English";
 
     public static PersonDTO createFakeDTO() {
         return PersonDTO.builder()
-                .firstName(FIRST_NAME)
-                .lastName(LAST_NAME)
-                .cpf(CPF_NUMBER)
-                .birthDate("04-04-2010")
+                .author(AUTHOR)
+                .source(SOURCE)
+                .url(URL)
+                .date("2022-01-23")
+                .language("English")
                 .phones(Collections.singletonList(PhoneUtils.createFakeDTO()))
                 .build();
     }
 
     public static Person createFakeEntity() {
         return Person.builder()
-                .id(PERSON_ID)
-                .firstName(FIRST_NAME)
-                .lastName(LAST_NAME)
-                .cpf(CPF_NUMBER)
-                .birthDate(BIRTH_DATE)
+                .id(ID)
+                .author(AUTHOR)
+                .source(SOURCE)
+                .url(URL)
+                .date(DATE)
+                .language(LANGUAGE)
                 .phones(Collections.singletonList(PhoneUtils.createFakeEntity()))
                 .build();
     }

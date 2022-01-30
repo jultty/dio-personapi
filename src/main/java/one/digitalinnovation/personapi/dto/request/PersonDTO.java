@@ -21,24 +21,23 @@ public class PersonDTO {
     private Long id;
 
     @NotEmpty
-    @Size(min = 2, max = 100)
-    private String firstName;
+    @Size(min = 1, max = 100)
+    private String author;
 
     @NotEmpty
     @Size(min = 2, max = 100)
-    private String lastName;
+    private String source;
 
     @NotEmpty
-    @CPF
-    private String cpf;
+    private String url;
 
     @NotNull
-    private String birthDate;
+    private String date;
+
+    @NotNull
+    private String language;
 
     @Valid
     @NotEmpty
     private List<PhoneDTO> phones;
-
-    @NotNull
-    private String city;
 }

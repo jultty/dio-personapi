@@ -29,20 +29,21 @@ public class Person {
     private Long id;
 
     @Column(nullable = false)
-    private String firstName;
+    private String author;
 
     @Column(nullable = false)
-    private String lastName;
+    private String source;
 
     @Column(nullable = false, unique = true)
-    private String cpf;
+    private String url;
 
-    private LocalDate birthDate;
+    private LocalDate date;
+
+    @Column(nullable = false)
+    private String language;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private List<Phone> phones = new ArrayList<>();
 
-    @Column(nullable = false)
-    private String city;
 
 }
