@@ -22,7 +22,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Person {
+public class Link {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

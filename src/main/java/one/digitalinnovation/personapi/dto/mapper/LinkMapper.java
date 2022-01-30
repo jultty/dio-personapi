@@ -1,15 +1,15 @@
 package one.digitalinnovation.personapi.dto.mapper;
 
-import one.digitalinnovation.personapi.dto.request.PersonDTO;
-import one.digitalinnovation.personapi.entities.Person;
+import one.digitalinnovation.personapi.dto.request.LinkDTO;
+import one.digitalinnovation.personapi.entities.Link;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
-public interface PersonMapper {
+public interface LinkMapper {
 
     @Mapping(target = "date", source = "date", dateFormat = "yyyy-MM-dd")
-    Person toModel(PersonDTO dto);
+    Link toModel(LinkDTO dto);
 
-    PersonDTO toDTO(Person dto);
+    LinkDTO toDTO(Link dto);
 }

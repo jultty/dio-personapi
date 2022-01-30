@@ -1,10 +1,10 @@
 package one.digitalinnovation.personapi.services;
 
-import one.digitalinnovation.personapi.dto.mapper.PersonMapper;
-import one.digitalinnovation.personapi.dto.request.PersonDTO;
+import one.digitalinnovation.personapi.dto.mapper.LinkMapper;
+import one.digitalinnovation.personapi.dto.request.LinkDTO;
 import one.digitalinnovation.personapi.dto.response.MessageResponseDTO;
-import one.digitalinnovation.personapi.entities.Person;
-import one.digitalinnovation.personapi.repositories.PersonRepository;
+import one.digitalinnovation.personapi.entities.Link;
+import one.digitalinnovation.personapi.repositories.LinkRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -18,27 +18,27 @@ import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class PersonServiceTest {
+public class LinkServiceTest {
 
     @Mock
-    private PersonRepository personRepository;
+    private LinkRepository linkRepository;
 
     @Mock
-    private PersonMapper personMapper;
+    private LinkMapper linkMapper;
 
     @InjectMocks
-    private PersonService personService;
+    private LinkService linkService;
 
     @Test
     void testGivenPersonDTOThenReturnSuccessSavedMessage() {
-        PersonDTO personDTO = createFakeDTO();
-        Person expectedSavedPerson = createFakeEntity();
+        LinkDTO linkDTO = createFakeDTO();
+        Link expectedSavedLink = createFakeEntity();
 
-        when(personMapper.toModel(personDTO)).thenReturn(expectedSavedPerson);
-        when(personRepository.save(any(Person.class))).thenReturn(expectedSavedPerson);
+        when(linkMapper.toModel(linkDTO)).thenReturn(expectedSavedLink);
+        when(linkRepository.save(any(Link.class))).thenReturn(expectedSavedLink);
 
-        MessageResponseDTO expectedSuccessMessage = createExpectedSuccessMessage(expectedSavedPerson.getId());
-        MessageResponseDTO successMessage = personService.create(personDTO);
+        MessageResponseDTO expectedSuccessMessage = createExpectedSuccessMessage(expectedSavedLink.getId());
+        MessageResponseDTO successMessage = linkService.create(linkDTO);
 
         assertEquals(expectedSuccessMessage, successMessage);
     }

@@ -1,7 +1,7 @@
 package one.digitalinnovation.personapi.utils;
 
-import one.digitalinnovation.personapi.dto.request.PersonDTO;
-import one.digitalinnovation.personapi.entities.Person;
+import one.digitalinnovation.personapi.dto.request.LinkDTO;
+import one.digitalinnovation.personapi.entities.Link;
 
 import java.time.LocalDate;
 import java.util.Collections;
@@ -15,8 +15,8 @@ public class PersonUtils {
     public static final LocalDate DATE = LocalDate.of(2022, 1, 23);
     private static final String LANGUAGE = "English";
 
-    public static PersonDTO createFakeDTO() {
-        return PersonDTO.builder()
+    public static LinkDTO createFakeDTO() {
+        return LinkDTO.builder()
                 .author(AUTHOR)
                 .source(SOURCE)
                 .url(URL)
@@ -26,8 +26,8 @@ public class PersonUtils {
                 .build();
     }
 
-    public static Person createFakeEntity() {
-        return Person.builder()
+    public static Link createFakeEntity() {
+        return Link.builder()
                 .id(ID)
                 .author(AUTHOR)
                 .source(SOURCE)

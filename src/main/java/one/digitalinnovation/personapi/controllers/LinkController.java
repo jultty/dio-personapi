@@ -1,10 +1,10 @@
 package one.digitalinnovation.personapi.controllers;
 
 import lombok.AllArgsConstructor;
-import one.digitalinnovation.personapi.dto.request.PersonDTO;
+import one.digitalinnovation.personapi.dto.request.LinkDTO;
 import one.digitalinnovation.personapi.dto.response.MessageResponseDTO;
-import one.digitalinnovation.personapi.exception.PersonNotFoundException;
-import one.digitalinnovation.personapi.services.PersonService;
+import one.digitalinnovation.personapi.exception.LinkNotFoundException;
+import one.digitalinnovation.personapi.services.LinkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,38 +21,38 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/people")
+@RequestMapping("/api/v1/link")
 @AllArgsConstructor(onConstructor = @__(@Autowired))
-public class PersonController {
+public class LinkController {
 
-    private final PersonService personService;
+    private final LinkService linkService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public MessageResponseDTO create(@RequestBody @Valid PersonDTO personDTO) {
-        return personService.create(personDTO);
+    public MessageResponseDTO create(@RequestBody @Valid LinkDTO linkDTO) {
+        return linkService.create(linkDTO);
     }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public PersonDTO findById(@PathVariable Long id) throws PersonNotFoundException {
-        return personService.findById(id);
+    public LinkDTO findById(@PathVariable Long id) throws LinkNotFoundException {
+        return linkService.findById(id);
     }
 
     @GetMapping
-    public List<PersonDTO> listAll() {
-        return personService.listAll();
+    public List<LinkDTO> listAll() {
+        return linkService.listAll();
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public MessageResponseDTO update(@PathVariable Long id, @RequestBody @Valid PersonDTO personDTO) throws PersonNotFoundException {
-        return personService.update(id, personDTO);
+    public MessageResponseDTO update(@PathVariable Long id, @RequestBody @Valid LinkDTO linkDTO) throws LinkNotFoundException {
+        return linkService.update(id, linkDTO);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Long id) throws PersonNotFoundException {
-        personService.delete(id);
+    public void delete(@PathVariable Long id) throws LinkNotFoundException {
+        linkService.delete(id);
     }
 }
