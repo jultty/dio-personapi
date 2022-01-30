@@ -11,8 +11,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static one.digitalinnovation.personapi.utils.PersonUtils.createFakeDTO;
-import static one.digitalinnovation.personapi.utils.PersonUtils.createFakeEntity;
+import static one.digitalinnovation.personapi.utils.LinkUtils.createFakeDTO;
+import static one.digitalinnovation.personapi.utils.LinkUtils.createFakeEntity;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.when;
@@ -30,7 +30,7 @@ public class LinkServiceTest {
     private LinkService linkService;
 
     @Test
-    void testGivenPersonDTOThenReturnSuccessSavedMessage() {
+    void testGivenLinkDTOThenReturnSuccessSavedMessage() {
         LinkDTO linkDTO = createFakeDTO();
         Link expectedSavedLink = createFakeEntity();
 
@@ -43,9 +43,9 @@ public class LinkServiceTest {
         assertEquals(expectedSuccessMessage, successMessage);
     }
 
-    private MessageResponseDTO createExpectedSuccessMessage(Long savedPersonId) {
+    private MessageResponseDTO createExpectedSuccessMessage(Long saveLinkId) {
         return MessageResponseDTO.builder()
-                .message("Person successfully created with ID " + savedPersonId)
+                .message("Link entry successfully created with ID " + saveLinkId)
                 .build();
     }
 

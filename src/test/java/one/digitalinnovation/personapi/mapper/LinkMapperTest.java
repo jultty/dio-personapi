@@ -5,7 +5,7 @@ import one.digitalinnovation.personapi.dto.request.LinkDTO;
 import one.digitalinnovation.personapi.dto.request.QuoteDTO;
 import one.digitalinnovation.personapi.entities.Link;
 import one.digitalinnovation.personapi.entities.Quote;
-import one.digitalinnovation.personapi.utils.PersonUtils;
+import one.digitalinnovation.personapi.utils.LinkUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,8 +19,8 @@ public class LinkMapperTest {
     private LinkMapper linkMapper;
 
     @Test
-    void testGivenPersonDTOThenReturnPersonEntity() {
-        LinkDTO linkDTO = PersonUtils.createFakeDTO();
+    void testGivenLinkDTOThenReturnLinkEntity() {
+        LinkDTO linkDTO = LinkUtils.createFakeDTO();
         Link link = linkMapper.toModel(linkDTO);
 
         assertEquals(linkDTO.getAuthor(), link.getAuthor());
@@ -36,8 +36,8 @@ public class LinkMapperTest {
     }
 
     @Test
-    void testGivenPersonEntityThenReturnPersonDTO() {
-        Link link = PersonUtils.createFakeEntity();
+    void testGivenLinkEntityThenReturnLinkDTO() {
+        Link link = LinkUtils.createFakeEntity();
         LinkDTO linkDTO = linkMapper.toDTO(link);
 
         assertEquals(link.getAuthor(), linkDTO.getAuthor());

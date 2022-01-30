@@ -6,7 +6,7 @@ import one.digitalinnovation.personapi.entities.Link;
 import java.time.LocalDate;
 import java.util.Collections;
 
-public class PersonUtils {
+public class LinkUtils {
 
     private static final String AUTHOR = "Alejandro Ugarte";
     private static final String SOURCE = "Baeldung";
