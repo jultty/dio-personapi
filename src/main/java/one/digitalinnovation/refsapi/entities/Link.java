@@ -31,8 +31,8 @@ public class Link {
     @Column(nullable = false)
     private String title;
 
-    @Column(nullable = false)
-    private String author;
+    @Column
+    private String authorship;
 
     @Column(nullable = false)
     private String source;

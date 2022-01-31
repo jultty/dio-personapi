@@ -25,8 +25,14 @@ public class Book {
     @Column(nullable = false)
     private String title;
 
+    @Column
+    private String subtitle;
+
     @Column(nullable = false)
-    private String author;
+    private String authorship;
+
+    @Column
+    private String organizer;
 
     @Column
     private String url;
@@ -49,6 +55,9 @@ public class Book {
     @Column
     @ISBN
     private String isbn;
+
+    @Column
+    private int pages;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private List<Quote> quotes = new ArrayList<>();

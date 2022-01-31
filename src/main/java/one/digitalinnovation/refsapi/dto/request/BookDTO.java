@@ -23,10 +23,13 @@ public class BookDTO {
     @Size(min = 1)
     private String title;
 
+    private String subtitle;
+
     @NotEmpty
     @Size(min = 1)
-    private String author;
+    private String authorship;
 
+    private String organizer;
     private String url;
     private String language;
     private int volume;
@@ -34,6 +37,7 @@ public class BookDTO {
     private String location;
     private LocalDate date;
     private String isbn;
+    private int pages;
 
     @Valid
     private List<QuoteDTO> quotes;

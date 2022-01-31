@@ -23,7 +23,7 @@ public class LinkMapperTest {
         LinkDTO linkDTO = LinkUtils.createFakeDTO();
         Link link = linkMapper.toModel(linkDTO);
 
-        assertEquals(linkDTO.getAuthor(), link.getAuthor());
+        assertEquals(linkDTO.getAuthorship(), link.getAuthorship());
         assertEquals(linkDTO.getSource(), link.getSource());
         assertEquals(linkDTO.getUrl(), link.getUrl());
         assertEquals(linkDTO.getLanguage(), link.getLanguage());
@@ -40,7 +40,7 @@ public class LinkMapperTest {
         Link link = LinkUtils.createFakeEntity();
         LinkDTO linkDTO = linkMapper.toDTO(link);
 
-        assertEquals(link.getAuthor(), linkDTO.getAuthor());
+        assertEquals(link.getAuthorship(), linkDTO.getAuthorship());
         assertEquals(link.getSource(), linkDTO.getSource());
         assertEquals(link.getUrl(), linkDTO.getUrl());
         assertEquals(link.getLanguage(), linkDTO.getLanguage());

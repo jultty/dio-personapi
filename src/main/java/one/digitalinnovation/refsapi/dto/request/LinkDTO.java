@@ -23,9 +23,8 @@ public class LinkDTO {
     @Size(min = 1)
     private String title;
 
-    @NotEmpty
     @Size(min = 1, max = 100)
-    private String author;
+    private String authorship;
 
     @NotEmpty
     @Size(min = 2, max = 100)
@@ -34,7 +33,6 @@ public class LinkDTO {
     @NotEmpty
     private String url;
 
-    @NotNull
     private String date;
 
     @NotEmpty

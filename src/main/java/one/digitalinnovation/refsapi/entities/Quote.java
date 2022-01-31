@@ -31,4 +31,11 @@ public class Quote {
 
     @Column(unique = true, length = 1000)
     private String quote;
+
+    @Column
+    private int page;
+
+    @Column
+    private String authorship;
+
 }

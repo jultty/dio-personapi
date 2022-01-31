@@ -23,4 +23,11 @@ public class QuoteDTO {
 
     @Size(min = 1, max = 1000)
     private String quote;
+
+    private int page;
+
+    private String authorship;
+
+
+
 }
