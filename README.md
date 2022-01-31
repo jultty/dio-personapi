@@ -51,7 +51,7 @@ Para alterar os registros você pode fazer requisições `GET`, `POST`,
       * **authors** - autoria da citação
       * **page** - página da citação
 
-* book
+* **book**
   * **title** - título do livro (obrigatório)
   * **subtitle** - subtítulo
   * **authors** - autoria com um ou mais nomes (obrigatório)
