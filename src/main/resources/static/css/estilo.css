@@ -5,20 +5,17 @@
 
 ul {
   list-style: none;
-}
-
-ul li {
-	display: inline;
-  margin-right: 20px;
+  color: #cccccc;
 }
 
 ul li::before {
-  content: "\1F79C";
+  content: "\2B2B";
   color: white;
   font-weight: normal;
   display: inline-block;
   width: 2em;
   margin-left: -1em;
+  margin-bottom: 5px;
 }
 
 	* {background-color: #222222}
