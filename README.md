@@ -7,7 +7,7 @@ Este projeto foi desenvolvido como parte do Bootcamp
 Amdocs JAVA Developer da [DIO](https://www.dio.me/).
 
 Há uma versão em nuvem no
-[Heroku](https://refs-api.herokuapps.com) mas ela costuma estar 
+[Heroku](http://refs-api.herokuapp.com) mas ela costuma estar 
 desabilitada por padrão. Você pode entrar em contato se desejar
 utilizá-la.
 
