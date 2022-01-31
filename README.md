@@ -13,11 +13,47 @@ Atualmente há dois _endpoints_ implementados:
 * `/api/v1/book/` para referências em livros
 
 Ao acessar um endpoint diretamente você irá obter um _array_ contendo todos os dados
-inseridos no banco de dados da API.
+inseridos no banco de dados da API para aquele endpoint.
+
+Ao acessar a página inicial (`localhost:8080` se estiver executando localmente)
+será gerada uma página HTML. Você pode editá-la no diretório
+`src/main/resources/templates` e o CSS em `src/main/resources/static/css`.
 
 Para alterar os registros você pode fazer requisições `GET`, `POST`, `PUT` e `DELETE`.
 
-### Estrutura de dados
+### Detalhamento dos campos
+
+* link
+  * author: informação de autoria
+  * source: nome do site ou instituição
+  * url: endereço web (`http://www..."`)
+  * date: data no formato `2022-01-31`
+  * language: idioma
+  * quotes
+    * type: `LINE`, `BLOCK` ou `PARAGRAPH`
+    * quote: citação em até 1000 caracteres
+
+* book
+  * title: título do livro
+  * author: informações de autoria 
+  * language: idioma
+  * url: link para acessar o livro ou informações sobre ele 
+  * date": data no formato `2022-01-31`
+  * edition: edição 
+  * volume: volume, para livros em múltiplos volumes
+  * isbn: código ISBN (retorna erro para ISBN inválido)
+  * location: país e/ou cidade da publicação 
+  * quotes
+    * type: `LINE`, `BLOCK` ou `PARAGRAPH`
+    * quote: citação em até 1000 caracteres
+
+Os tipos `LINE`, `BLOCK` e `PARAGRAPH` não alteram o limite de 1000 caracteres
+para as citações, servindo apenas como referência de seu tamanho até o momento
+desta implementação. `LINE` para citações curtas de apenas uma linha de texto,
+`BLOCK` para blocos maiores e `PARAGRAPH` para parágrafos inteiros até o limite
+de 1000 caracteres.
+
+### Notação JSON
 #### Link
 ```json
 {
