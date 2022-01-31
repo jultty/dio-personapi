@@ -8,12 +8,71 @@ Amdocs JAVA Developer da [DIO](https://www.dio.me/).
 
 ## Especificação
 
-Atualmente há apenas um _endpoint_ implementado, em `/api/v1/link/`.
-Ao acessá-lo você irá obter um _array_ contendo todos os dados
+Atualmente há dois _endpoints_ implementados:
+* `/api/v1/link/` para referências em forma de ligações da web
+* `/api/v1/book/` para referências em livros
+
+Ao acessar um endpoint diretamente você irá obter um _array_ contendo todos os dados
 inseridos no banco de dados da API.
 
-Você pode fazer requisições `GET`, `POST`, `PUT` e `DELETE` usando a seguinte estrutura:
+Para alterar os registros você pode fazer requisições `GET`, `POST`, `PUT` e `DELETE`.
 
+### Estrutura de dados
+#### Link
+```json
+{
+"title": "",
+  "author": "",
+  "source": "",
+  "url": "",
+  "date": "YYYY-MM-DD",
+  "language": "",
+  "quotes": [
+    {
+      "type": "LINE",
+      "quote": ""
+    },
+    {
+      "type": "BLOCK",
+      "quote": ""
+    },
+    {
+      "type": "PARAGRAPH",
+      "quote": ""
+    }
+  ]
+}
+```
+
+#### Livro
+```json
+{
+    "title": "",
+    "author": "",
+    "language": "",
+    "url": "",
+    "date": "YYYY-MM-DD",
+    "edition": "",
+    "location": "",
+    "quotes": [
+        {
+            "type": "LINE",
+            "quote": ""
+        },
+        {
+            "type": "BLOCK",
+            "quote": ""
+        },
+        {
+            "type": "PARAGRAPH",
+            "quote": ""
+        }
+    ]
+}
+```
+
+### Exemplos
+#### Link sem citações
 ```json
 {
     "title": "Conheça 10 artistas trans cearenses e seus trabalhos autorais",
@@ -25,8 +84,7 @@ Você pode fazer requisições `GET`, `POST`, `PUT` e `DELETE` usando a seguinte
 }
 ```
 
-Você também pode inserir citações que ficarão vinculadas à entrada:
-
+#### Link com citações
 ```json
 {
     "title": "Difference Between @NotNull, @NotEmpty, and @NotBlank Constraints in Bean Validation",
@@ -39,6 +97,29 @@ Você também pode inserir citações que ficarão vinculadas à entrada:
         {
             "type": "LINE",
             "quote": "the @NotNull constraint won't allow null values for the constrained field(s). However, the field(s) can be empty."
+        }
+    ]
+}
+```
+
+#### Livro com citações
+```json
+{
+    "title": "Do Tratamento à Organização da Informação",
+    "author": "Maria Graça Simões e Gercina Ângela de Lima",
+    "language": "Portuguese",
+    "url": "http://monographs.uc.pt/iuc/catalog/view/121/297/476-1",
+    "date": "2020-10-01",
+    "edition": "1",
+    "location": "Coimbra, Portugal",
+    "quotes": [
+        {
+            "type": "BLOCK",
+            "quote": "a precariedade das regras compromete a qualidade das informações documentárias e a sua recuperação, sem que se possa estabelecer parâmetros confiáveis de avaliação. Pode-se, nessas circunstâncias, avaliar apenas a pobreza ou riqueza da recuperação, mas não o porquê ou o grau dos resultados atingidos"
+        },
+        {
+            "type": "LINE",
+            "quote": "o conhecimento reside na mente das pessoas e como tal a priori nem pode ser gerido nem pode ser organizado"
         }
     ]
 }
