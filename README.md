@@ -159,7 +159,7 @@ e `PARAGRAPH` para parágrafos inteiros até o limite de 1000 caracteres.
   "title": "Do Tratamento à Organização da Informação",
   "subtitle": "Reflexões sobre concepções, perspectivas e tendências",
   "authors": "Maria Graça Simões, Gercina Ângela de Lima",
-  "organizer": "Benildes Coura Moreira dos Santos Maculan, Célia da Consolação Dias",
+  "organizers": "Benildes Coura Moreira dos Santos Maculan, Célia da Consolação Dias",
   "url": "http://monographs.uc.pt/iuc/catalog/view/121/297/476-1",
   "language": "Portuguese",
   "edition": "1",
