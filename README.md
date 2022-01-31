@@ -38,7 +38,7 @@ Para alterar os registros você pode fazer requisições `GET`, `POST`, `PUT` e 
   * author: informações de autoria 
   * language: idioma
   * url: link para acessar o livro ou informações sobre ele 
-  * date": data no formato `2022-01-31`
+  * date: data no formato `2022-01-31`
   * edition: edição 
   * volume: volume, para livros em múltiplos volumes
   * isbn: código ISBN (retorna erro para ISBN inválido)
@@ -47,11 +47,10 @@ Para alterar os registros você pode fazer requisições `GET`, `POST`, `PUT` e 
     * type: `LINE`, `BLOCK` ou `PARAGRAPH`
     * quote: citação em até 1000 caracteres
 
-Os tipos `LINE`, `BLOCK` e `PARAGRAPH` não alteram o limite de 1000 caracteres
-para as citações, servindo apenas como referência de seu tamanho até o momento
-desta implementação. `LINE` para citações curtas de apenas uma linha de texto,
-`BLOCK` para blocos maiores e `PARAGRAPH` para parágrafos inteiros até o limite
-de 1000 caracteres.
+Os tipos `LINE`, `BLOCK` e `PARAGRAPH` não alteram o limite de caracteres
+para as citações, servindo apenas como referência. `LINE` para citações curtas
+de apenas uma linha de texto, `BLOCK` para blocos maiores e `PARAGRAPH` para
+parágrafos inteiros até o limite de 1000 caracteres.
 
 ### Notação JSON
 #### Link

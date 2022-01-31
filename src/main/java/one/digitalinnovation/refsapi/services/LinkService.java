@@ -35,8 +35,8 @@ public class LinkService {
     }
 
     public List<LinkDTO> listAll() {
-        List<Link> people = linkRepository.findAll();
-        return people.stream()
+        List<Link> link = linkRepository.findAll();
+        return link.stream()
                 .map(linkMapper::toDTO)
                 .collect(Collectors.toList());
     }
