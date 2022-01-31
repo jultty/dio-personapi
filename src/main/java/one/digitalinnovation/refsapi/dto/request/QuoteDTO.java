@@ -8,6 +8,7 @@ import one.digitalinnovation.refsapi.enums.QuoteType;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.validation.constraints.Size;
 
 @Data
 @Builder
@@ -20,5 +21,6 @@ public class QuoteDTO {
     @Enumerated(EnumType.STRING)
     private QuoteType type;
 
+    @Size(min = 1, max = 1000)
     private String quote;
 }

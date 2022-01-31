@@ -29,6 +29,6 @@ public class Quote {
     @Column()
     private QuoteType type;
 
-    @Column(unique = true)
+    @Column(unique = true, length = 1000)
     private String quote;
 }
