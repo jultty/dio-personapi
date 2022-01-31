@@ -53,6 +53,8 @@ Para alterar os registros você pode fazer requisições `GET`, `POST`, `PUT` e 
     "url": "",
     "date": "YYYY-MM-DD",
     "edition": "",
+    "volume": "",
+    "isbn": "",
     "location": "",
     "quotes": [
         {
@@ -112,6 +114,7 @@ Para alterar os registros você pode fazer requisições `GET`, `POST`, `PUT` e 
     "date": "2020-10-01",
     "edition": "1",
     "location": "Coimbra, Portugal",
+    "isbn": "9789892619439",
     "quotes": [
         {
             "type": "BLOCK",
