@@ -17,7 +17,7 @@ public class LinkUtils {
 
     public static LinkDTO createFakeDTO() {
         return LinkDTO.builder()
-                .authorship(AUTHOR)
+                .authors(AUTHOR)
                 .source(SOURCE)
                 .url(URL)
                 .date("2022-01-23")
@@ -29,7 +29,7 @@ public class LinkUtils {
     public static Link createFakeEntity() {
         return Link.builder()
                 .id(ID)
-                .authorship(AUTHOR)
+                .authors(AUTHOR)
                 .source(SOURCE)
                 .url(URL)
                 .date(DATE)

@@ -29,10 +29,10 @@ public class Book {
     private String subtitle;
 
     @Column(nullable = false)
-    private String authorship;
+    private String authors;
 
     @Column
-    private String organizer;
+    private String organizers;
 
     @Column
     private String url;

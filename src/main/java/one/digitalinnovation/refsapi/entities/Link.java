@@ -32,7 +32,7 @@ public class Link {
     private String title;
 
     @Column
-    private String authorship;
+    private String authors;
 
     @Column(nullable = false)
     private String source;

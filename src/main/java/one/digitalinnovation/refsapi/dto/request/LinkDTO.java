@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
 
@@ -24,7 +23,7 @@ public class LinkDTO {
     private String title;
 
     @Size(min = 1, max = 100)
-    private String authorship;
+    private String authors;
 
     @NotEmpty
     @Size(min = 2, max = 100)

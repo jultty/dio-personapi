@@ -26,7 +26,7 @@ public class QuoteDTO {
 
     private int page;
 
-    private String authorship;
+    private String authors;
 
 
 

@@ -36,6 +36,6 @@ public class Quote {
     private int page;
 
     @Column
-    private String authorship;
+    private String authors;
 
 }

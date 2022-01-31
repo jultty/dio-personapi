@@ -27,11 +27,14 @@ public class BookDTO {
 
     @NotEmpty
     @Size(min = 1)
-    private String authorship;
+    private String authors;
 
-    private String organizer;
+    private String organizers;
     private String url;
+
+    @NotEmpty
     private String language;
+
     private int volume;
     private String edition;
     private String location;
