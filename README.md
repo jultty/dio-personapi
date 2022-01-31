@@ -24,7 +24,7 @@ Para alterar os registros você pode fazer requisições `GET`, `POST`, `PUT` e 
 ### Detalhamento dos campos
 
 * link
-  * author: informação de autoria
+  * authorship: informação de autoria
   * source: nome do site ou instituição
   * url: endereço web (`http://www..."`)
   * date: data no formato `2022-01-31`
@@ -32,20 +32,26 @@ Para alterar os registros você pode fazer requisições `GET`, `POST`, `PUT` e 
   * quotes
     * type: `LINE`, `BLOCK` ou `PARAGRAPH`
     * quote: citação em até 1000 caracteres
+    * authorship: informação de autoria da citação
 
 * book
   * title: título do livro
-  * author: informações de autoria 
+  * subtitle: subtítulo
+  * authorship: informações de autoria 
+  * organizer: organização, para trabalhos coletivos
   * language: idioma
   * url: link para acessar o livro ou informações sobre ele 
   * date: data no formato `2022-01-31`
   * edition: edição 
+  * pages: número de páginas
   * volume: volume, para livros em múltiplos volumes
   * isbn: código ISBN (retorna erro para ISBN inválido)
   * location: país e/ou cidade da publicação 
   * quotes
     * type: `LINE`, `BLOCK` ou `PARAGRAPH`
     * quote: citação em até 1000 caracteres
+    * page: página da citação
+    * authorship: informação de autoria da citação
 
 Os tipos `LINE`, `BLOCK` e `PARAGRAPH` não alteram o limite de caracteres
 para as citações, servindo apenas como referência. `LINE` para citações curtas
@@ -142,23 +148,28 @@ parágrafos inteiros até o limite de 1000 caracteres.
 #### Livro com citações
 ```json
 {
-    "title": "Do Tratamento à Organização da Informação",
-    "author": "Maria Graça Simões e Gercina Ângela de Lima",
-    "language": "Portuguese",
-    "url": "http://monographs.uc.pt/iuc/catalog/view/121/297/476-1",
-    "date": "2020-10-01",
-    "edition": "1",
-    "location": "Coimbra, Portugal",
-    "isbn": "9789892619439",
-    "quotes": [
-        {
-            "type": "BLOCK",
-            "quote": "a precariedade das regras compromete a qualidade das informações documentárias e a sua recuperação, sem que se possa estabelecer parâmetros confiáveis de avaliação. Pode-se, nessas circunstâncias, avaliar apenas a pobreza ou riqueza da recuperação, mas não o porquê ou o grau dos resultados atingidos"
-        },
-        {
-            "type": "LINE",
-            "quote": "o conhecimento reside na mente das pessoas e como tal a priori nem pode ser gerido nem pode ser organizado"
-        }
-    ]
+  "title": "Do Tratamento à Organização da Informação",
+  "subtitle": "Reflexões sobre concepções, perspectivas e tendências",
+  "authorship": "Maria Graça Simões e Gercina Ângela de Lima",
+  "organizer": "Benildes Coura Moreira dos Santos Maculan e Célia da Consolação Dias",
+  "url": "http://monographs.uc.pt/iuc/catalog/view/121/297/476-1",
+  "language": "Portuguese",
+  "edition": "1",
+  "location": "Coimbra, Portugal",
+  "date": "2020-10-01",
+  "isbn": "9789892619439",
+  "pages": "302",
+  "quotes": [
+    {
+      "type": "BLOCK",
+      "quote": "a precariedade das regras compromete a qualidade das informações documentárias e a sua recuperação, sem que se possa estabelecer parâmetros confiáveis de avaliação. Pode-se, nessas circunstâncias, avaliar apenas a pobreza ou riqueza da recuperação, mas não o porquê ou o grau dos resultados atingidos"
+    },
+    {
+      "type": "LINE",
+      "quote": "o conhecimento reside na mente das pessoas e como tal a priori nem pode ser gerido nem pode ser organizado",
+      "page": "276",
+      "authorship": "Maria Cristina Vieira de Freita, Olívia Pestana, Maria Aparecida Moura"
+    }
+  ]
 }
 ```
